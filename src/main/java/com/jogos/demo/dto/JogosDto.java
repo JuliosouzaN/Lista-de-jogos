@@ -1,6 +1,7 @@
 package com.jogos.demo.dto;
 
 import com.jogos.demo.entities.Jogos;
+import com.jogos.demo.projections.JogosProjection;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,13 @@ public class JogosDto {
 		this.ano = entity.getAno();
 		this.imgUrl = entity.getImgUrl();
 		this.descricaoCurta = entity.getDescricaoCurta();
+	}
+	
+	public JogosDto(JogosProjection projection) {
+		this.id = projection.getId();
+		this.titulo = projection.getTitulo();
+		this.ano = projection.getAno();
+		this.imgUrl = projection.getImgUrl();
+		this.descricaoCurta = projection.getDescricaoCurta();
 	}
 }

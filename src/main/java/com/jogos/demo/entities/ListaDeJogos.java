@@ -2,7 +2,6 @@ package com.jogos.demo.entities;
 
 import java.util.Objects;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,34 +13,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name ="tb_jogo")
+@Table(name = "tb_lista_ogos")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Jogos {
+public class ListaDeJogos {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String titulo;
-	private Integer ano;
-	private String genero;
-	private String plataforma;
-	private Double pontuacao; 
-	private String imgUrl;
+	private String nome;
 	
-	@Column(columnDefinition = "TEXT")
-	private String descricaoCurta;
-	
-	@Column(columnDefinition = "TEXT")
-	private String descricaoLonga;
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -50,7 +37,7 @@ public class Jogos {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Jogos other = (Jogos) obj;
+		ListaDeJogos other = (ListaDeJogos) obj;
 		return Objects.equals(id, other.id);
 	}
 }

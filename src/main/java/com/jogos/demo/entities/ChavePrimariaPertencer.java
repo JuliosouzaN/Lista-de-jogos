@@ -18,10 +18,10 @@ import lombok.Setter;
 public class ChavePrimariaPertencer {
 	
 	@ManyToOne
-	@JoinColumn(name = "Jogo_id" )
+	@JoinColumn(name = "jogo_id" )
 	private Jogos jogos;
 	
 	@ManyToOne
-	@JoinColumn(name = "Lista_id" )
+	@JoinColumn(name = "lista_id" )
 	private ListaDeJogos listaDeJogos;
 }

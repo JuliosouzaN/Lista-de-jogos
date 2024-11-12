@@ -19,12 +19,12 @@ public class Pertencer {
 	@EmbeddedId
 	private ChavePrimariaPertencer id = new ChavePrimariaPertencer();
 	
-	private Integer position;
+	private Integer posicao;
 
-	public Pertencer(Jogos jogos, ListaDeJogos listaDeJogos, Integer position) {
+	public Pertencer(Jogos jogos, ListaDeJogos listaDeJogos, Integer posicao) {
 		id.setJogos(jogos);
 		id.setListaDeJogos(listaDeJogos);
-		this.position = position;
+		this.posicao = posicao;
 	}
 
 	@Override
